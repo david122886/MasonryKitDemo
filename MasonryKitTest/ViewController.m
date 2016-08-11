@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "NSObject+Caculator.h"
 @interface ViewController ()
 
 @end
@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSInteger result = [NSObject makeCaculator:^(CaculatorManager *make) {
+        make.add(20).add(30).add(10);
+    }];
+    NSLog(@"%ld",result);
     // Do any additional setup after loading the view, typically from a nib.
 }
 
